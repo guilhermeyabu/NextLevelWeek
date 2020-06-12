@@ -1,9 +1,11 @@
 import express, { response } from 'express'; 
 import routes from './routes';
+import path from 'path';
 
 const app = express();
 
 app.use(express.json());
+app.use('/uploads', express.static(path.resolve(__dirname, '..', 'uploads')));
 
 /**
  * Rota: Endereço completo da requisição
